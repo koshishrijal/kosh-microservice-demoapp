@@ -9,8 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.kosh</groupId>
-    <artifactId>blogservice</artifactId>
+    <artifactId>eurekaserver</artifactId>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
