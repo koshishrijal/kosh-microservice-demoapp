@@ -1,18 +1,15 @@
-package com.kosh.authservice.model;
+package com.kosh.authservice.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
-@Builder
-public class AuthRequest {
+@JsonIgnoreProperties(ignoreUnknown = true)
+public class AppUserInsertDto {
 
     @NotNull(message = "email cannot be null")
     @NotEmpty(message = "email cannot be empty")
@@ -20,5 +17,4 @@ public class AuthRequest {
     @NotNull(message = "password cannot be null")
     @NotEmpty(message = "password cannot be empty")
     private String password;
-
 }

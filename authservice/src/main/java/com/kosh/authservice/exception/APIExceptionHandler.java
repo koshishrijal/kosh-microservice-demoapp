@@ -1,4 +1,4 @@
-package com.kosh.blogservice.exception;
+package com.kosh.authservice.exception;
 
 
 import org.springframework.http.ResponseEntity;
