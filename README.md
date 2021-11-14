@@ -4,7 +4,7 @@ Microservice demo with spring boot, spring cloud gateway, spring cloud load bala
 
 Instructions to run
 1.Goto The folder location and run maven build command  mvn clean install
-2.Make sure mysql is running on port 3306 of local machine and make sure to change the mysql password in application.properties of auth and blog service is password is not empty
+2.Make sure mysql is running on port 3306 of local machine and make sure to change the mysql password in application.properties of auth and blog service.
 3.First run eureka server , jar location is eurekaserver\target\eurekaserver-0.0.1-SNAPSHOT.jar , run as java -jar eurekaserver-0.0.1-SNAPSHOT.jar 
 4.Run Blogservice, authservice and gateway service similarly as 
    jar location for blog service is blogservice\target\blogservice-0.0.1-SNAPSHOT.jar , run as java -jar blogservice-0.0.1-SNAPSHOT.jar 
