@@ -37,7 +37,7 @@ public class BlogDao {
         log.info("Count Query is: {}", countQuery);
         int count = namedParameterJdbcTemplate.queryForObject(countQuery, filterMap, Integer.class);
         sql.append(" LIMIT " + of.getPageSize() + " OFFSET " + of.getPageNumber() * of.getPageSize());
-        log.debug("Blog  FILTER SQL IS: {}", sql.toString());
+        log.debug("Blog  FILTER SQL IS: {}", sql);
         List<Blog> blogList = namedParameterJdbcTemplate.query(sql.toString(), filterMap, new BeanPropertyRowMapper<Blog>(Blog.class));
         return new PageImpl<>(blogList, of, count);
     }

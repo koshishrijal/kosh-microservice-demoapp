@@ -18,6 +18,10 @@ public class GatewayConfig {
         return builder.routes()
                 .route("authservice-routes", p ->
                         p.path("/api/v1/auth/**").uri("lb://authservice/api/v1/auth"))
+                .route("auth-docs", p ->
+                        p.path("/docs/auth/**").filters(f -> f.rewritePath("^/docs/auth", "")).uri("lb://authservice"))
+                .route("blog-docs", p ->
+                        p.path("/docs/blog/**").filters(f -> f.rewritePath("^/docs/blog", "")).uri("lb://blogservice"))
                 .route("blogservice-routes", p -> p
                         .path("/api/v1/blog/**").filters(f -> f.filter(authenticationFilter)).uri("lb://blogservice/api/v1/blog"))
 
