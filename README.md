@@ -16,6 +16,7 @@ Instructions to run
    Docs are avaiable in the form of swagger ui at
    1.
    http://localhost:8081/docs/auth/swagger-ui.html for auth service, fist register a user using the register endpoint token is sent in response , keep it for further api access
+   Every other secured api endpoint should recive Authorization header with the jwt token value received by the user after login.
    Also there is login endpoint to regain token for regustered user
    2.The docs for crud operation of blog service is at 
     http://localhost:8081/docs/auth/swagger-ui.html
