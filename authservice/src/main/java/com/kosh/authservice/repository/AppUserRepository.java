@@ -11,6 +11,4 @@ public interface AppUserRepository extends JpaRepository<AppUser, String> {
 
     boolean existsByEmail(String email);
 
-//    @Query(value = " SELECT CASE  WHEN count(*)> 0 THEN true ELSE false END  from app_user where email = :email", nativeQuery = true)
-//    boolean existsByEmail(@Param("email") String email);
 }
