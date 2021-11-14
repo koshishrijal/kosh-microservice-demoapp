@@ -12,11 +12,15 @@ import org.springframework.context.annotation.Configuration;
 public class GatewayConfig {
     @Autowired
     private AuthenticationFilter authenticationFilter;
+
     @Bean
     public RouteLocator routes(RouteLocatorBuilder builder) {
         return builder.routes()
-                .route("blogservice-routes",p -> p
+                .route("authservice-routes", p ->
+                        p.path("/api/v1/auth/**").uri("lb://authservice/api/v1/auth"))
+                .route("blogservice-routes", p -> p
                         .path("/api/v1/blog/**").filters(f -> f.filter(authenticationFilter)).uri("lb://blogservice/api/v1/blog"))
+
                 .build();
     }
 
